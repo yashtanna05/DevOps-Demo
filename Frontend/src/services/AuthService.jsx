@@ -1,7 +1,7 @@
 // AuthService.jsx
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8080/public';
+const API_BASE_URL = 'https://skillsetzone-1.onrender.com/public';
 
 // Signup service (now using FormData)
 export const signup = async (userData) => {

@@ -42,7 +42,7 @@ const Dashboard = () => {
   const fetchTopSkills = useCallback(async () => {
     try {
       // Using the public endpoint without authentication
-      const response = await fetch("http://localhost:8080/admin/skill/all");
+      const response = await fetch("https://skillsetzone-1.onrender.com/admin/skill/all");
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -57,7 +57,7 @@ const Dashboard = () => {
   const fetchSkills = useCallback(async () => {
     const headers = { Authorization: `Basic ${authToken}` };
     try {
-      const response = await fetch("http://localhost:8080/api/skills/all-skills", { method: "GET", headers });
+      const response = await fetch("https://skillsetzone-1.onrender.com/api/skills/all-skills", { method: "GET", headers });
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -92,7 +92,7 @@ const Dashboard = () => {
   const toggleLike = async (skillId) => {
     const headers = { Authorization: `Basic ${authToken}` };
     try {
-      const response = await fetch(`http://localhost:8080/api/skills/like/${skillId}`, {
+      const response = await fetch(`https://skillsetzone-1.onrender.com/api/skills/like/${skillId}`, {
         method: "PUT",
         headers,
       });

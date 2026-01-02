@@ -85,7 +85,7 @@ const SearchResults = () => {
     } else if (searchQuery) {
       setLoading(true);
       
-      const endpoint = `http://localhost:8080/api/skills/search?query=${encodeURIComponent(searchQuery)}`;
+      const endpoint = `https://skillsetzone-1.onrender.com/api/skills/search?query=${encodeURIComponent(searchQuery)}`;
 
       let headers = {};
       

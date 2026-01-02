@@ -52,7 +52,7 @@ const UserProfile = () => {
     setLoading(true);
     try {
       // Fetch user profile and skills
-      const response = await fetch(`http://localhost:8080/api/users/profile/${username}`, {
+      const response = await fetch(`https://skillsetzone-1.onrender.com/api/users/profile/${username}`, {
         method: "GET",
         headers: { Authorization: `Basic ${authToken}` },
       });
@@ -90,7 +90,7 @@ const UserProfile = () => {
 
   const fetchUserExperiences = async (email) => {
     try {
-      const response = await fetch(`http://localhost:8080/api/expr/user-email/${email}`, {
+      const response = await fetch(`https://skillsetzone-1.onrender.com/api/expr/user-email/${email}`, {
         method: "GET",
         headers: { Authorization: `Basic ${authToken}` },
       });

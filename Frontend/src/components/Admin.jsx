@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '/src/css/Admin.css';
 
@@ -122,7 +122,7 @@ const Admin = () => {
   };
 
   const fetchTopSkills = async () => {
-    const response = await fetch('http://localhost:8080/admin/skill/all');
+    const response = await fetch('https://skillsetzone-1.onrender.com/admin/skill/all');
     if (response.ok) {
       const data = await response.json();
       setSkills(data.map(skill => skill.skillName));
@@ -140,7 +140,7 @@ const Admin = () => {
   };
 
   const fetchAllUsers = async () => {
-    const response = await fetch('http://localhost:8080/admin/all-users');
+    const response = await fetch('https://skillsetzone-1.onrender.com/admin/all-users');
     if (response.ok) {
       const data = await response.json();
       setUsers(data);
@@ -155,7 +155,7 @@ const Admin = () => {
     try {
       console.log('Fetching details for user:', userName); // Debugging log
       setSelectedUser(userName);
-      const response = await fetch(`http://localhost:8080/admin/userProfile/${userName}`);
+      const response = await fetch(`https://skillsetzone-1.onrender.com/admin/userProfile/${userName}`);
       
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -190,7 +190,7 @@ const Admin = () => {
     }
     
     try {
-      const response = await fetch(`http://localhost:8080/admin/user/delete/${userId}`, {
+      const response = await fetch(`https://skillsetzone-1.onrender.com/admin/user/delete/${userId}`, {
         method: 'DELETE',
       });
       
@@ -240,7 +240,7 @@ const Admin = () => {
       const formData = new FormData();
       formData.append('skillName', newSkill.trim());
       
-      const response = await fetch('http://localhost:8080/admin/skill/create', {
+      const response = await fetch('https://skillsetzone-1.onrender.com/admin/skill/create', {
         method: 'POST',
         body: formData
       });
@@ -270,7 +270,7 @@ const Admin = () => {
     }
     
     try {
-      const response = await fetch(`http://localhost:8080/admin/skill/delete?skillName=${encodeURIComponent(skillName)}`, {
+      const response = await fetch(`https://skillsetzone-1.onrender.com/admin/skill/delete?skillName=${encodeURIComponent(skillName)}`, {
         method: 'DELETE',
       });
       
@@ -312,7 +312,7 @@ const Admin = () => {
       }
       
       // Delete the old skill
-      const deleteResponse = await fetch(`http://localhost:8080/admin/skill/delete?skillName=${encodeURIComponent(oldSkill)}`, {
+      const deleteResponse = await fetch(`https://skillsetzone-1.onrender.com/admin/skill/delete?skillName=${encodeURIComponent(oldSkill)}`, {
         method: 'DELETE',
       });
       
@@ -324,7 +324,7 @@ const Admin = () => {
       const formData = new FormData();
       formData.append('skillName', editSkillValue.trim());
       
-      const addResponse = await fetch('http://localhost:8080/admin/skill/create', {
+      const addResponse = await fetch('https://skillsetzone-1.onrender.com/admin/skill/create', {
         method: 'POST',
         body: formData
       });

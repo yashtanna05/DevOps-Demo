@@ -33,7 +33,7 @@ const Skill = () => {
   // Fetch skill details when editing
   const fetchSkillDetails = async (skillId) => {
     try {
-      const response = await fetch(`http://localhost:8080/api/skills/${skillId}`, {
+      const response = await fetch(`https://skillsetzone-1.onrender.com/api/skills/${skillId}`, {
         method: "GET",
         headers: {
           Authorization: `Basic ${authToken}`,
@@ -67,8 +67,8 @@ const Skill = () => {
   
     try {
       const url = editingSkillId
-        ? `http://localhost:8080/api/skills/update/${editingSkillId}`
-        : "http://localhost:8080/api/skills/create";
+        ? `https://skillsetzone-1.onrender.com/api/skills/update/${editingSkillId}`
+        : "https://skillsetzone-1.onrender.com/api/skills/create";
   
       const response = await fetch(url, {
         method: editingSkillId ? "PUT" : "POST",

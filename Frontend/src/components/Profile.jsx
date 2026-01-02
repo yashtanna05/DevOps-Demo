@@ -67,7 +67,7 @@ function Profile() {
 
   const fetchUserProfile = async () => {
     try {
-      const response = await fetch("http://localhost:8080/api/users/profile", {
+      const response = await fetch("https://skillsetzone-1.onrender.com/api/users/profile", {
         method: "GET",
         headers: { Authorization: `Basic ${authToken}` },
       });
@@ -93,7 +93,7 @@ function Profile() {
 
   const fetchUserSkills = async () => {
     try {
-      const response = await fetch("http://localhost:8080/api/skills/all", {
+      const response = await fetch("https://skillsetzone-1.onrender.com/api/skills/all", {
         method: "GET",
         headers: { Authorization: `Basic ${authToken}` },
       });
@@ -108,7 +108,7 @@ function Profile() {
 
   const fetchUserExperiences = async () => {
     try {
-      const response = await fetch("http://localhost:8080/api/expr/all", {
+      const response = await fetch("https://skillsetzone-1.onrender.com/api/expr/all", {
         method: "GET",
         headers: { Authorization: `Basic ${authToken}` },
       });
@@ -159,7 +159,7 @@ function Profile() {
       if (formData.image) formDataToSend.append("image", formData.image);
       if (formData.bio) formDataToSend.append("bio", formData.bio);
 
-      const response = await fetch("http://localhost:8080/api/users/updateUser", {
+      const response = await fetch("https://skillsetzone-1.onrender.com/api/users/updateUser", {
         method: "POST",
         headers: { Authorization: `Basic ${authToken}` },
         body: formDataToSend, 
@@ -180,7 +180,7 @@ function Profile() {
       formDataToSend.append("experience", experienceData.experience);
       if (experienceData.image) formDataToSend.append("file", experienceData.image);
 
-      const response = await fetch("http://localhost:8080/api/expr/create", {
+      const response = await fetch("https://skillsetzone-1.onrender.com/api/expr/create", {
         method: "POST",
         headers: { Authorization: `Basic ${authToken}` },
         body: formDataToSend, 
@@ -216,7 +216,7 @@ function Profile() {
     
     try {
       const response = await fetch(
-        `http://localhost:8080/api/skills/delete/${skillId}`,
+        `https://skillsetzone-1.onrender.com/api/skills/delete/${skillId}`,
         {
           method: "DELETE",
           headers: { Authorization: `Basic ${authToken}` },
@@ -242,7 +242,7 @@ function Profile() {
     
     try {
       const response = await fetch(
-        `http://localhost:8080/api/expr/delete/${experienceId}`,
+        `https://skillsetzone-1.onrender.com/api/expr/delete/${experienceId}`,
         {
           method: "DELETE",
           headers: { Authorization: `Basic ${authToken}` },

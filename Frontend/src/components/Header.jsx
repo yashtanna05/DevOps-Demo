@@ -25,7 +25,7 @@ const Header = () => {
           // Get the auth token from localStorage
           const token = localStorage.getItem("auth");
           
-          const response = await fetch("http://localhost:8080/api/users/profile", {
+          const response = await fetch("https://skillsetzone-1.onrender.com/api/users/profile", {
             headers: {
               Authorization: `Basic ${token}` // Assuming token-based authentication
             }
